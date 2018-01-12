@@ -11,7 +11,7 @@ var articleRouter= require('./routes/articleRouter');
 var certRouter= require('./routes/certRouter');
 var index = require('./routes/index');
 var logger = require('morgan');
-var port = Number(process.env.PORT || 3000);
+var port =  process.env.PORT || 3000 ;
 // using passport
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
 app.use('/article',articleRouter);
 app.use('/admin',adminRouter);
 app.use('/cert',certRouter);
-app.use('/', index );
+//app.use('/', index );
 
 app.use(express.static(process.env.PWD + '/views'));
 app.use(bodyParser.json() );       // to support JSON-encoded bodies
@@ -67,8 +67,7 @@ app.get('/*', function(req, res, next) {
 });
 
 app.get('/',function(req,res){
-  console.log('inside get');
-  res.send('hello ');
+  res.render('admin');
 });
 passport.use(new LocalStrategy(Admin.authenticate()));
 passport.serializeUser(Admin.serializeUser());
@@ -76,6 +75,6 @@ passport.deserializeUser(Admin.deserializeUser());
 
 app.use("/",router);
 
-var server = app.listen(port,function(){
-  console.log("Live at port "+server.address().port);
+app.listen(port,function(){
+  console.log("Live at port "+ port);
 });

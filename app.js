@@ -11,7 +11,7 @@ var articleRouter= require('./routes/articleRouter');
 var certRouter= require('./routes/certRouter');
 var index = require('./routes/index');
 var logger = require('morgan');
-var port = Number(process.env.PORT || 8000);
+var port = Number(process.env.PORT || 3000);
 // using passport
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
@@ -66,6 +66,10 @@ app.get('/*', function(req, res, next) {
   res.sendFile(__dirname+req.url);
 });
 
+app.get('',function(req,res){
+  console.log('inside get');
+  res.send('hello ');
+});
 passport.use(new LocalStrategy(Admin.authenticate()));
 passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());

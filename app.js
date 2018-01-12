@@ -66,7 +66,7 @@ app.get('/*', function(req, res, next) {
   res.sendFile(__dirname+req.url);
 });
 
-app.get('',function(req,res){
+app.get('/',function(req,res){
   console.log('inside get');
   res.send('hello ');
 });

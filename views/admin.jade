@@ -1,0 +1,77 @@
+extends layout
+
+block content
+
+  section#one
+          .inner
+              if(!user)
+                a.button.btn.btn-default(href="/admin/logout") Logout 
+                br
+                br
+
+                header.major
+                  h1 Add Article 
+                form(action='/admin/addArticle', method='post', enctype='multipart/form-data')
+                  fieldset
+                    | Title: 
+                    input(type='text', name='title')
+                    br
+                    |                       Picture:
+                    input(type='file', name='pic')
+                    br
+                    br
+                    |                       Description:
+                    input(type='text', name='desc')
+                    |                   Content: 
+                    textarea(name='content', style='height:500px;') Enter your content here...
+                    br
+                    input(type='submit', value='Add Article')
+
+                header.major
+                  h1 Add Certificate
+                form(action='/admin/addCert', method='post', enctype='multipart/form-data')
+                  fieldset
+                    | Name: 
+                    input(type='text', name='name')
+                    br
+                    | DOB: 
+                    input(type='text', name='dob')
+                    br
+                    |                       Phone:
+                    input(type='text', name='phone')
+                    br
+                    |                 
+                    
+                    input(type='submit', value='Add Certificate')
+
+                header.major
+                  h1 Add Admin 
+                form(action='/admin/addAdmin', method='post', enctype='multipart/form-data')
+                  fieldset
+                    | Username: 
+                    input(type='text', name='username')
+                    br
+                    |                       Password:
+                    input(type='text', name='password')
+                    br
+                    |              
+                    
+                    input(type='submit', value='Add Admin')
+
+              if(!user)
+                h4 Not logged in
+                p Hello, Please login first.
+                
+                  form(role='form', action="/admin/login",method="post", style='max-width: 300px;')
+
+                    .form-group Username: 
+                        input.form-control(type='text', name="username", placeholder='Enter Username')
+                        br
+                    .form-group Password:
+                       input.form-control(type='password', name="password", placeholder='Password')
+                    br
+                    button.btn.btn-default(type='submit') Login
+
+
+
+

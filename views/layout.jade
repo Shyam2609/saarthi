@@ -1,0 +1,99 @@
+doctype html
+html
+  head
+    title Saarthi
+    | &#x9;&#x9;
+    meta(charset='utf-8')
+    | &#x9;&#x9;
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    //if lte IE 8
+      script(src='assets/js/ie/html5shiv.js')
+    | &#x9;&#x9;
+    link(rel='stylesheet', href='assets/css/main.css')
+    //if lte IE 9
+      link(rel='stylesheet', href='assets/css/ie9.css')
+    //if lte IE 8
+      link(rel='stylesheet', href='assets/css/ie8.css')
+  | &#x9;
+  body
+    // Wrapper
+    #wrapper
+      // Header
+      header#header.alt
+        a.logo(href='/')
+          strong SAARTHI
+          |  
+          span
+        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+        nav
+          a(href='#menu') Menu
+      // Menu
+      nav#menu
+        ul.links
+          li
+            a(href='/') Home
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            a(href='/cert') Certificate
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          
+        ul.actions.vertical
+          li
+            a.button.special.fit(href='/') Get Started
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          li
+            a.button.fit(href='/admin') Log In
+      
+      if (error && error.length > 0)
+        br
+        h4.error-msg= error
+        br
+      
+      // Banner
+      block content
+      // Main
+      
+      // Footer
+      footer#footer
+        .inner
+          ul.icons
+            li
+              a.icon.alt.fa-twitter(href='#')
+                span.label Twitter
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            li
+              a.icon.alt.fa-facebook(href='#')
+                span.label Facebook
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            li
+              a.icon.alt.fa-instagram(href='#')
+                span.label Instagram
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            li
+              a.icon.alt.fa-github(href='#')
+                span.label GitHub
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            li
+              a.icon.alt.fa-linkedin(href='#')
+                span.label LinkedIn
+          | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          ul.copyright
+            li &copy; Untitled
+            li
+              | Design: 
+              a(href='https://html5up.net') HTML5 UP
+    // Scripts
+    script(src='assets/js/jquery.min.js')
+    | &#x9;&#x9;&#x9;
+    script(src='assets/js/jquery.scrolly.min.js')
+    | &#x9;&#x9;&#x9;
+    script(src='assets/js/jquery.scrollex.min.js')
+    | &#x9;&#x9;&#x9;
+    script(src='assets/js/skel.min.js')
+    | &#x9;&#x9;&#x9;
+    script(src='assets/js/util.js')
+    //if lte IE 8
+      script(src='assets/js/ie/respond.min.js')
+    | &#x9;&#x9;&#x9;
+    script(src='assets/js/main.js')
+

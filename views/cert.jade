@@ -1,0 +1,16 @@
+extend layout
+
+block content
+
+	section#one
+		.inner
+			header.major
+				h1 Find the certificate
+			form(action='cert', method='post', enctype='multipart/form-data')
+				fieldset
+				| Phone: 
+				input(type='text', name='phone')
+				
+				input(type='submit', value='Search')
+
+

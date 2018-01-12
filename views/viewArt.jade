@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+  #main.alt
+        // One
+        section#one
+          .inner
+            header.major
+              h1 #{data[0].title}
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            span.image.main
+              img(src=data[0].img, alt='')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            p
+              | #{data[0].content}
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            p
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            p
+              | 

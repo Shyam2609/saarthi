@@ -10,10 +10,19 @@ var certificateSchema = new Schema({
       type:String,
       required:true
     },
-    phone:{
+    emailId:{
+      type:String,
+      required:true
+    },
+    date:{
+      type:String,
+      required:true
+    },
+    purpose:{
       type:String,
       required:true
     }
+
 });
 
 

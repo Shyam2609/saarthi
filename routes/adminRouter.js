@@ -24,7 +24,7 @@ passport.deserializeUser(Admin.deserializeUser());
 var multer = require('multer')
 , MongoClient = require('mongodb').MongoClient
 , ObjectId = require('mongodb').ObjectId
-, fs = require('fs-extra')
+, fs = require('fs')
 , util = require('util')
 , storage = multer.diskStorage({
   destination : function(req,file,cb){
@@ -103,9 +103,15 @@ adminRouter.post('/addCert', upload.any(), function (req, res){
  // console.log(req.body.name);
   var newCert = new Cert({
    name: req.body.name,
-   phone:req.body.phone,
+   emailId:req.body.emailId,
    dob:req.body.dob,
+   date:req.body.date,
+   purpose:req.body.purpose
  });
+
+  if(newCert.name == null || newCert.name == ""){
+    res.render('message',{msg:'invalid name'});
+  }
   
   newCert.save(function(err, Cert){
     if (!err) {

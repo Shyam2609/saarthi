@@ -16,7 +16,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var multer = require('multer')
 , MongoClient = require('mongodb').MongoClient
 , ObjectId = require('mongodb').ObjectId
-, fs = require('fs-extra')
+, fs = require('fs')
 , util = require('util')
 , storage = multer.diskStorage({
   destination : function(req,file,cb){
@@ -56,9 +56,9 @@ certRouter.post('/cert', upload.any(), function (req, res){
   //console.log(req.files[0].path);
   //console.log(req.body.title);
   //var imgPath = req.files[0].path;
-  console.log(req.body.phone);
-  var str1 = req.body.phone;
-  Cert.find({"phone":str1}, function(err, data) {
+  console.log(req.body.emailId);
+  var str1 = req.body.emailId;
+  Cert.find({"emailId":str1}, function(err, data) {
     if(err) {
      res.send(err.message);
    }

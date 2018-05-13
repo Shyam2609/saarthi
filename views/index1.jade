@@ -40,19 +40,18 @@ block content
           -}
 
           br
-          br
-        br
-        footer
-          .pagination
-            <a href='#{page-1}' class="previous">Prev</a>
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;            
-            a.next(href='#{page+1}') Next
-            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+          
       
         // Two
         section#two
 
           .inner
+            ul.actions
+              li
+                a.button.scrolly(href='#{page-1}') Prev
+              li
+                a.button.scrolly(href='#{page+1}') Next
+
             header.major
              
               h2 About Saarthi

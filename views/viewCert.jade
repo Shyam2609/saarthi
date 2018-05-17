@@ -1,12 +1,11 @@
-extends layout
+div(style="background-image:url('../images/cert.jpeg');height:1400px;background-repeat:no-repeat;background-position:center")
+	- var count = 0
+	- while (count < 36){
+	-count++
+	br
+	-}
+	h4(style='color:black;text-align:center;font-size:30px;') #{data[0].name}
+	br
+	h4(style='color:black;font-size:30px;margin-left:40%;') #{data[0].purpose}
 
-block content
-
-	section#one
-		.inner   
-			h4 Certificate is issused to the candidate with below given details.
-			h4 Name: #{data[0].name}
-			h4 DOB: #{data[0].dob}
-			h4 EmailId: #{data[0].emailId}
-			h4 Date : #{data[0].date}
-			h4 Purpose : #{data[0].purpose}
+	
